@@ -5,7 +5,7 @@ import json
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/ticket')
 def index():
     return jsonify({"Choo Choo": "Updated Flask Routes"})
 
@@ -32,7 +32,8 @@ def assign_ticket(ticket):
 
 valid_ids=['#1','#2','#3','#4','#5']
 
-@app.route('/ticket', methods=['POST'])
+@app.route('/', methods=['POST'])
+
 def create_ticket():
     data = request.get_json()
     try:
